@@ -1,0 +1,15 @@
+return {
+  {
+    "rose-pine/neovim",
+    name = "rosepine",
+    config = function()
+      vim.cmd("colorscheme rose-pine")
+    end,
+    lazy = false,
+  },
+
+  {
+    "LazyVim/LazyVim",
+    opts = { colorscheme = "rose-pine" },
+  },
+}

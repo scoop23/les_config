@@ -1,0 +1,4 @@
+return {
+  { "morhetz/gruvbox", lazy = false },
+  { "LazyVim/LazyVim", opts = { colorscheme = "gruvbox" } },
+}
