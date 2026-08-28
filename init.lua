@@ -3,18 +3,26 @@ require("config.lazy")
 vim.notify = require("notify")
 
 vim.g.netrw_list_hide = ""
+
 -- require("kanagawa").load("dragon")
 -- require("solarized-osaka").load()
 -- require("smear_cursor").setup()
 -- require("cyberpunk").load()
-require("catppuccin").setup({
-  flavour = "frappe",
-})
-vim.cmd.colorscheme("catppuccin")
+-- require("catppuccin").setup({
+-- flavour = "frappe",
+-- })
+-- vim.cmd.colorscheme("catppuccin")
+-- vim.cmd.colorscheme("tokyonight")
+
 -- vim.opt.shell = "C:\\Program Files\\Git\\bin\\bash.exe"
 -- vim.opt.shellcmdflag = "-c"
 -- vim.opt.shellquote = ""
 -- vim.opt.shellxquote = ""
+
+require('onedark').setup {
+  style = 'deep'
+}
+require('onedark').load()
 
 if vim.g.neovide then
   -- vim.o.guifont = "JetBrainsMono Nerd Font:h:10"
@@ -25,7 +33,7 @@ end
 vim.fn.mkdir(vim.fn.stdpath("state") .. "/swap", "p")
 vim.opt.directory = vim.fn.stdpath("state") .. "/swap//"
 
--- basically just delete buffers that got left behind.
+-- basically just delete buffers that got left behind. 
 vim.api.nvim_create_user_command("CleanSwaps", function()
   local swapdir = vim.fn.stdpath("state") .. "/swap"
   local files = vim.fn.glob(swapdir .. "/*", false, true)
