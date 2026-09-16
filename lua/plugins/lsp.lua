@@ -1,14 +1,44 @@
-local lspconfig = require('lspconfig')
+return {
+  {
+    "neovim/nvim-lspconfig",
 
-lspconfig.pyright.setup({
-  settings = {
-    python = {
-      analysis = {
-        autoSearchPaths = true,
-        useLibraryCodeForTypes = true,
-        diagnosticMode = "openFilesOnly", -- Reduces lag on large Django projects
-      },
-    },
+    config = function()
+      vim.lsp.config("pyright", {
+        settings = {
+          python = {
+            analysis = {
+              autoSearchPaths = true,
+              useLibraryCodeForTypes = true,
+              diagnosticMode = "openFilesOnly",
+            },
+          },
+        },
+
+        root_markers = {
+          "pyrightconfig.json",
+          "manage.py",
+          ".git",
+        },
+      })
+
+      vim.lsp.enable("pyright")
+      vim.lsp.enable("vtsls")
+      vim.keymap.set("n", "gl", vim.diagnostic.open_float, {
+        desc = "Show diagnostic",
+      })
+    end,
   },
- root_dir = lspconfig.util.root_pattern("pyrightconfig.json", "manage.py", ".git"),
-})
+}
+-- vim.lsp.config("pyright", {
+--     settings = {
+--         python = {
+--             analysis = {
+--                 autoSearchPaths = true,
+--                 useLibraryCodeForTypes = true,
+--                 diagnosticMode = "openFilesOnly",
+--             },
+--         },
+--     },
+-- })
+--
+-- vim.lsp.enable("pyright")

@@ -18,3 +18,12 @@ end, { desc = "All Projects" })
 vim.keymap.set("n", "<leader>m", function()
   vim.cmd("Alpha")
 end, { desc = "Open Main Menu / Dashboard" })
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(event)
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, {
+      buffer = event.buf,
+      desc = "Go to definition",
+    })
+  end,
+})

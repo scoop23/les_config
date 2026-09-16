@@ -4,7 +4,7 @@ vim.notify = require("notify")
 
 vim.g.netrw_list_hide = ""
 
--- require("kanagawa").load("dragon")
+require("kanagawa").load("dragon")
 -- require("solarized-osaka").load()
 -- require("smear_cursor").setup()
 -- require("cyberpunk").load()
@@ -19,10 +19,10 @@ vim.g.netrw_list_hide = ""
 -- vim.opt.shellquote = ""
 -- vim.opt.shellxquote = ""
 
-require('onedark').setup {
-  style = 'deep'
-}
-require('onedark').load()
+-- require('onedark').setup {
+--   style = 'deep'
+-- }
+-- require('onedark').load()
 
 if vim.g.neovide then
   -- vim.o.guifont = "JetBrainsMono Nerd Font:h:10"
