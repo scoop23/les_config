@@ -4,7 +4,7 @@ vim.notify = require("notify")
 
 vim.g.netrw_list_hide = ""
 
-require("kanagawa").load("dragon")
+-- require("kanagawa").load("dragon")
 -- require("solarized-osaka").load()
 -- require("smear_cursor").setup()
 -- require("cyberpunk").load()
@@ -12,7 +12,7 @@ require("kanagawa").load("dragon")
 -- flavour = "frappe",
 -- })
 -- vim.cmd.colorscheme("catppuccin")
--- vim.cmd.colorscheme("tokyonight")
+vim.cmd.colorscheme("tokyonight-storm")
 
 -- vim.opt.shell = "C:\\Program Files\\Git\\bin\\bash.exe"
 -- vim.opt.shellcmdflag = "-c"
