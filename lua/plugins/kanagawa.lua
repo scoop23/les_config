@@ -9,22 +9,30 @@ return {
       keywordStyle = { italic = true },
       statementStyle = { bold = true },
       typeStyle = {},
-      transparent = false, -- do not set background color
+      transparent = true, -- enables transparency
       dimInactive = false, -- dim inactive window `:h hl-NormalNC`
       terminalColors = true, -- define vim.g.terminal_color_{0,17}
       colors = { -- add/modify theme and palette colors
         palette = {},
-        theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+        theme = {
+          wave = {},
+          lotus = {},
+          dragon = {},
+          all = {
+            ui = {
+              bg_gutter = "none", -- keeps line numbers and sign column transparent
+            },
+          },
+        },
       },
       overrides = function(colors) -- add/modify highlights
-        return {}
+        return {
+          NormalFloat = { bg = "none" },
+          FloatBorder = { bg = "none" },
+          FloatTitle = { bg = "none" },
+        }
       end,
-      -- theme = "wave", -- Load "wave" theme
-      -- background = { -- map the value of 'background' option to a theme
-      --   dark = "wave", -- try "dragon" !
-      --   light = "lotus",
-      -- },
-      vim.cmd("colorscheme kanagawa-wave"),
     })
+    vim.cmd("colorscheme kanagawa-dragon")
   end,
 }
